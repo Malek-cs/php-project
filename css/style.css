@@ -1,0 +1,91 @@
+body { 
+    background-color: #fafafa; 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar { 
+    background: #fff; 
+    border-bottom: 1px solid #eee; 
+    padding: 1.2rem 0; 
+}
+.navbar-brand { font-weight: 800; font-size: 1.25rem; }
+.nav-link { font-size: 0.95rem; }
+.nav-link.active { color: #000 !important; font-weight: 600; }
+.nav-link.text-secondary { color: #636e72 !important; }
+
+.search-input { 
+    background-color: #f1f2f6; 
+    border: none; 
+    border-radius: 20px; 
+    padding: 0.5rem 1.5rem; 
+    font-size: 0.9rem;
+}
+.search-input::placeholder { color: #8e969d; }
+
+.cafe-img { 
+    height: 250px; 
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+.cafe-img:hover { transform: translateY(-5px); }
+
+main { flex: 1; } 
+
+.footer { 
+    background-color: #fff; 
+    border-top: 1px solid #eee; 
+    padding: 1.5rem 0; 
+    margin-top: auto; 
+}
+/* =========================================
+   Contact Form Styles
+   ========================================= */
+.contact-wrapper {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    max-width: 600px;
+    margin: 0 auto; 
+    border: 1px solid #f1f2f6;
+}
+
+.contact-wrapper h1 {
+    font-weight: 800;
+    color: #2d3436;
+    text-align: center;
+}
+
+.contact-wrapper .form-label {
+    font-weight: 600;
+    color: #636e72;
+    font-size: 0.9rem;
+}
+
+.contact-wrapper .form-control {
+    border-radius: 10px;
+    border: 1px solid #dfe6e9;
+    padding: 0.75rem 1rem;
+    background-color: #fafafa;
+}
+
+.contact-wrapper .form-control:focus {
+    border-color: #000;
+    background-color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(0,0,0,0.05);
+}
+
+.contact-wrapper .btn-dark {
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-weight: 600;
+    width: 100%; 
+    transition: all 0.3s ease;
+}
+
+.contact-wrapper .btn-dark:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}

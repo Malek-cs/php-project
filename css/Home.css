@@ -1,0 +1,45 @@
+
+.hero-section {
+    padding: 7rem 0;
+    background-color: #fdfbfb;
+    border-bottom: 1px solid #eee;
+    animation: fadeInDown 1s ease-out;
+}
+
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+.hero-image {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.hero-image:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+
+.features-list {
+    line-height: 2;
+}
+
+
+.btn-explore {
+    background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-explore:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #000000 0%, #2d3436 100%);
+}
