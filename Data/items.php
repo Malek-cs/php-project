@@ -1,6 +1,5 @@
 <?php
 
-
 $study_spaces = [
     1 => [
         "id" => 1, 
@@ -48,4 +47,14 @@ $study_spaces = [
         "has_power_outlets" => true
     ]
 ];
+
+$spaceId = $_GET['id'] ?? '';
+
+if ($spaceId && !isset($study_spaces[$spaceId])) {
+    header("Location: 404.php");
+    exit;
+}
+
+$space = $study_spaces[$spaceId] ?? null;
+
 ?>

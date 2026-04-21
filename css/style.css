@@ -39,9 +39,7 @@ main { flex: 1; }
     padding: 1.5rem 0; 
     margin-top: auto; 
 }
-/* =========================================
-   Contact Form Styles
-   ========================================= */
+
 .contact-wrapper {
     background-color: #fff;
     padding: 2.5rem;
@@ -89,9 +87,7 @@ main { flex: 1; }
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
-/* =========================================
-   functions style
-   ========================================= */
+
 .debug-output {
     background-color: #222;
     color: #0f0; 
