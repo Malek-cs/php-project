@@ -33,7 +33,7 @@ $study_spaces = [
         "name" => "Darat al Funun", 
         "type" => "Cultural Space", 
         "loc" => "Lweibdeh", 
-        "img" => "public/daratalfunun.webp",
+        "img" => "public/darat-al-funun.webp",
         "wifi_speed" => "Slow",
         "has_power_outlets" => false
     ],
