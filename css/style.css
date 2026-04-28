@@ -101,3 +101,148 @@ main { flex: 1; }
     margin: 20px;
     border: 1px solid #444;
 }
+
+/* search and my submissions */
+
+.messi {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.ronaldo {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.ronaldo .form-control {
+    flex: 1;
+    border-radius: 20px;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #dfe6e9;
+    background-color: #f1f2f6;
+}
+
+.ronaldo .form-control:focus {
+    background-color: #fff;
+    border-color: #000;
+    outline: none;
+}
+
+.ronaldo .btn-dark {
+    border-radius: 20px;
+    padding: 0.75rem 2rem;
+    width: auto;
+}
+
+.neymar {
+    background: #fff;
+    border: 1px solid #f1f2f6;
+    border-radius: 15px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    transition: transform 0.2s ease;
+}
+
+.neymar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.neymar img {
+    width: 110px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.mbappe h3 {
+    margin: 0 0 5px; 
+    font-size: 1.25rem; 
+    font-weight: 800;
+    color: #2d3436; 
+}
+
+.mbappe p { 
+    margin: 0; 
+    color: #636e72; 
+    font-size: 0.95rem; 
+}
+
+.zidane {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    max-width: 800px;
+    margin: 2rem auto;
+    border: 1px solid #f1f2f6;
+}
+
+.zidane h2 {
+    font-weight: 800;
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+}
+
+.modric {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.modric span { 
+    font-weight: 600; 
+    color: #636e72; 
+}
+
+.modric a {
+    text-decoration: none;
+    padding: 0.4rem 1.2rem;
+    background: #f1f2f6;
+    color: #636e72;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.modric a.active, 
+.modric a:hover {
+    background: #2d3436;
+    color: #fff;
+}
+
+.kroos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.kroos th, 
+.kroos td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.kroos th {
+    color: #2d3436;
+    font-weight: 600;
+    background: #fafafa;
+}
+
+.salah {
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.Approved { background: #e3f2fd; color: #0984e3; }
+.Pending { background: #fff3cd; color: #d35400; }
