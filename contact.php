@@ -1,4 +1,5 @@
 <?php
+session_start();
 $page_part = 'header';
 include("templates/layout.php");
 ?>

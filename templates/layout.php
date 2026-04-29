@@ -7,15 +7,34 @@ if (isset($page_part) && $page_part == 'header'): ?>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StudySpaces | Find Your Spot</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top bg-white border-bottom">
+        <div class="d-flex align-items-center me-auto" style="flex: 1;">
+            <?php if (isset($_SESSION['is_logged_in'])): ?>
+               
+                <a href="logout.php" class="btn btn-sm btn-outline-danger rounded-pill px-3 me-2">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                </a>
+                <span class="text-secondary small fw-bold d-none d-lg-inline">
+                    Hi, <?php echo htmlspecialchars($_SESSION['user_data']['username'] ?? 'User'); ?>
+                </span>
+            <?php endif; ?>
+        </div>
+    
         <div class="container">
-            <a class="navbar-brand text-dark" href="index.php">STUDYSPACES.</a>
+            <a class="navbar-brand fw-bold text-dark" href="index.php">STUDYSPACES.</a>
+
+            <form action="itemsPage.php" method="GET" class="d-none d-md-flex mx-auto" style="width: 320px;">
+                <div class="input-group">
             
-            <form class="d-none d-md-flex mx-auto" style="width: 320px;">
-                <input class="form-control search-input" type="search" placeholder="Search cafes..." aria-label="Search">
+                    <input name="q" type="search" class="form-control rounded-pill-start" placeholder="Search cafes..." value="<?php echo $_GET['q'] ?? ''; ?>">
+                    <button class="btn btn-outline-secondary rounded-pill-end" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
             </form>
 
             <div class="navbar-nav ms-auto gap-1">
@@ -28,11 +47,7 @@ if (isset($page_part) && $page_part == 'header'): ?>
 <?php endif; ?>
 
 <?php if (isset($page_part) && $page_part == 'footer'): ?>
-    </main>
-    <footer class="footer">
-        <div class="container text-center">
-            </div>
-    </footer>
+   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     </body>
     </html>
