@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
+
+
 
 $extra_css = 'home.css'; 
 
@@ -42,6 +51,9 @@ include("templates/layout.php");
 
     </div>
 </section>
+<h1>Welcome to the Home Page!</h1>
+<p>Hello, <?php echo $_SESSION['user_data']['username']; ?>. You are logged in.</p>
+<a href="logout.php">Logout</a>
 
 <?php
 $page_part = 'footer';
