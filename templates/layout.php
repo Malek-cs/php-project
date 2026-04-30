@@ -18,9 +18,9 @@ if (isset($page_part) && $page_part == 'header'): ?>
                 <a href="logout.php" class="btn btn-sm btn-outline-danger rounded-pill px-3 me-2">
                 <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
                 </a>
-                <span class="text-secondary small fw-bold d-none d-lg-inline">
+                <a href="dashboard.php" class="text-secondary small fw-bold d-none d-lg-inline text-decoration-none">
                     Hi, <?php echo htmlspecialchars($_SESSION['user_data']['username'] ?? 'User'); ?>
-                </span>
+                </a>
             <?php endif; ?>
         </div>
     
@@ -38,6 +38,9 @@ if (isset($page_part) && $page_part == 'header'): ?>
             </form>
 
             <div class="navbar-nav ms-auto gap-1">
+                <?php if (isset($_SESSION['is_logged_in'])): ?>
+                    <a class="nav-link text-secondary" href="dashboard.php">Dashboard</a>
+                <?php endif; ?>
                 <a class="nav-link active" href="itemsPage.php">Explore</a>
                 <a class="nav-link text-secondary" href="contact.php">Contact</a>
             </div>
