@@ -20,7 +20,7 @@ include("layout.php");
     }
     ?>
 
-    <p class="mt-3">Refresh the page to see the cookie in action 👀</p>
+    <p class="mt-3">Refresh the page to see the cookie in action </p>
 </div>
 
 <?php

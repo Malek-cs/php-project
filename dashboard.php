@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Check if user is logged in
+
 if (!isset($_SESSION['is_logged_in']) || $_SESSION['is_logged_in'] !== true) {
     header("Location: login.php");
     exit();
@@ -20,7 +20,7 @@ include("templates/layout.php");
     </div>
     
     <div class="row g-4 justify-content-center">
-        <!-- Explore Spaces Card -->
+    
         <div class="col-md-4">
             <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
                 <div class="card-body">
@@ -32,7 +32,7 @@ include("templates/layout.php");
             </div>
         </div>
         
-        <!-- Submit Request Card -->
+   
         <div class="col-md-4">
             <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
                 <div class="card-body">
@@ -44,7 +44,7 @@ include("templates/layout.php");
             </div>
         </div>
         
-        <!-- My Submissions Card -->
+       
         <div class="col-md-4">
             <div class="card h-100 shadow-sm border-0 rounded-4 text-center p-4">
                 <div class="card-body">
