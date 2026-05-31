@@ -1,16 +1,24 @@
 <?php
 session_start();
+require 'Data/config.php';
 
 if (isset($_POST['login'])) {
-    $user = $_POST['username'];
-    $pass = $_POST['password'];
+    $username = trim($_POST['username']);
+    $password = $_POST['password'];
 
-    if (isset($_SESSION['user_data']) && 
-        $user == $_SESSION['user_data']['username'] && 
-        $pass == $_SESSION['user_data']['password']) {
-        
+    $stmt = $conn->prepare("SELECT * FROM users WHERE username=? AND status='active'");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $user = $stmt->get_result()->fetch_assoc();
+
+    if ($user && password_verify($password, $user['password'])) {
         $_SESSION['is_logged_in'] = true;
-        header("Location: index.php");
+        $_SESSION['is_admin']     = (bool) $user['is_admin'];
+        $_SESSION['user_data']    = [
+            'id'       => $user['id'],
+            'username' => $user['username']
+        ];
+        header("Location: " . ($user['is_admin'] ? 'admin_dashboard.php' : 'index.php'));
         exit();
     } else {
         $error = "Incorrect username or password!";
@@ -18,15 +26,19 @@ if (isset($_POST['login'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Login | StudySpaces</title>
     <link rel="stylesheet" href="css/Home.css">
 </head>
 <body>
     <div class="card">
         <h2>Login</h2>
-        <?php if(isset($error)) echo "<p class='error'>$error</p>"; ?>
-        <form method="post">
+        <?php if (isset($error)): ?>
+            <p class="error"><?php echo htmlspecialchars($error); ?></p>
+        <?php endif; ?>
+        <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit" name="login">Sign In</button>
